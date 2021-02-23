@@ -54,7 +54,6 @@ window.onclick = function onclickRadio() {
     let r = document.getElementsByName('radius');
     let s = document.getElementById("count").value;
     let summ = 0;
-    let plname = 0;
     let value = 0;
     let sale = 0;
     for (let i = 0; i < r.length; i++) {
@@ -68,7 +67,7 @@ window.onclick = function onclickRadio() {
         }
     }
     sale = Number(value) + Number(value * 0.1);
-    // document.getElementById('planname').innerHTML = plname;
     document.getElementById('old-cost').innerHTML = sale;
     document.getElementById('cost-per-one').innerHTML = value;
+    document.getElementById('summ').innerHTML = summ;
   };
