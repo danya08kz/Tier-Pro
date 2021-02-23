@@ -1,0 +1,261 @@
+$midnight: #ffffff;
+$clouds: #ecf0f1;
+* {
+  font-family: 'PT Sans Caption', sans-serif;
+}
+body {
+  color: $midnight;
+  background: $clouds;
+  padding: 0 1em 1em;
+}
+h1 {
+  margin: 0;
+  line-height: 2;
+  text-align: center;
+}
+h2 {
+  margin: 0 0 .5em;
+  font-weight: normal;
+}
+input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.row {
+  display: flex;
+  margin: 200px auto;
+  width: 1024px;
+  height: 300px;
+  .col {
+    flex:1;
+    &:last-child {
+      margin-left: 1em;
+    }
+  }
+}
+.tabs {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 4px 0px rgba(0,0,0,0.5);
+}
+.tab {
+  width: 100%;
+  color: white;
+  overflow: hidden;
+  &-label {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    padding: 20px 100px;
+    color: rgb(179, 0, 0);
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    background: white;
+    &::after {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      background-image: url('../images/arrow.svg');
+      transition: all .35s;
+    }
+  }
+  &-content {
+    max-height: 0;
+    padding: 0 80px;
+    color: black;
+    background: white;
+    transition: all .35s;
+    .alert-text {
+      color:rgb(168, 0, 0);
+      padding-bottom: 10px;
+      font-size: 14px;
+    }
+    .wrap {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      .auto-type {
+        width: 70%;
+        .auto-type__text {
+          margin-bottom: 10px;
+        }
+        .auto-type__choice {
+          margin-bottom: 20px;
+        }
+        .tire-radius__text {
+          margin-bottom: 10px;
+        }
+        .tire-radius__choice {
+          margin-bottom: 20px;
+        }
+        .tire-radius__choice + .light {
+          display: block;
+        }
+        .tire-radius__choice + .suv {
+          display: block;
+        }
+        .tire-radius__choice + .comers {
+          display: block;
+        }
+        .light-none {
+          display: none;
+        }
+        .suv-none {
+          display: none;
+        }
+        .comers-none {
+          display: none;
+        }
+        .tire-radius__choice input {
+          position: absolute;
+          opacity: 0;
+          z-index: -1;
+        }
+        .tire-radius__choice label {
+          font-size: 14px;
+          background: grey;
+          color: white;
+          line-height: 14px;
+          padding: 5px;
+        }
+        .tire-radius__choice input:checked + label {
+          background: rgb(168, 0, 0);
+        }
+      }
+      .calc-info {
+        width: 30%;
+      }
+    }
+  }
+  &-close {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    font-size: 0.75em;
+    background: $midnight;
+    cursor: pointer;
+  }
+}
+input:checked {
+  + .tab-label {
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+  ~ .tab-content {
+    max-height: 100vh;
+    padding: 0 20px 0 100px;
+  }
+}
+.stickers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  letter-spacing: 0.5px;
+  position: relative;
+  color: #fff;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin-top: 10px;
+}
+.sticker_aktsiya {
+  padding: 5px;
+  height: 20px;
+  margin-right: 10px;
+  background-color: #e5b329;
+  color: rgb(31, 31, 31);
+  width: auto;
+  font-size: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+.sticker_sale_text {
+  padding: 5px;
+  height: 20px;
+  background-color: #e52929;
+  color: #fff;
+  width: auto;
+  font-size: 10px;
+  position: relative;
+  box-sizing: border-box;
+}
+.buy-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.buy-counter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 1px solid #f3f3f5;
+  background: #f3f3f5;
+  font-size: 0px;
+  vertical-align: top;
+  border-radius: 2px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.buy-counter input[type="text"] {
+  width: 34px;
+  border: 0px;
+  border-left: 1px solid #f3f3f5;
+  border-right: 1px solid #f3f3f5;
+  background: #f3f3f5;
+  color: #666666;
+  font-size: 13px;
+  height: 34px;
+  border-radius: 0px;
+  text-align: center;
+  line-height: 13px;
+}
+.buy-btn {
+  color: white;
+  background: #1284b9;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 20px 10px;
+  font-size: 14px;
+}
+.minus {
+  height: 34px;
+  width: 28px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+  height: 34px;
+  width: 24px;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: top;
+  color: black;
+}
+.plus {
+  height: 34px;
+  width: 28px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 40px;
+  height: 34px;
+  width: 24px;
+  display: inline-block;
+  cursor: pointer;
+  vertical-align: top;
+  color: black;
+}
