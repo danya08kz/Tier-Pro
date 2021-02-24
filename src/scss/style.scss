@@ -26,7 +26,6 @@ input[type=checkbox] {
   display: flex;
   margin: 200px auto;
   width: 1024px;
-  height: 300px;
   .col {
     flex:1;
     &:last-child {
@@ -36,7 +35,7 @@ input[type=checkbox] {
 }
 .tabs {
   overflow: hidden;
-  box-shadow: 0 4px 4px 0px rgba(196, 196, 196, 0.5);
+  border: 1px solid rgb(211, 211, 211);
 }
 .tab {
   width: 100%;
@@ -46,8 +45,8 @@ input[type=checkbox] {
     display: flex;
     position: relative;
     justify-content: space-between;
-    padding: 20px 100px;
-    color: rgb(179, 0, 0);
+    padding: 20px 20px 20px 100px;
+    color: black;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
@@ -68,7 +67,7 @@ input[type=checkbox] {
     background: white;
     transition: all .35s;
     .alert-text {
-      color:rgb(168, 0, 0);
+      color:#b41818;
       padding-bottom: 10px;
       font-size: 14px;
     }
@@ -156,7 +155,7 @@ input[type=checkbox] {
           padding: 5px;
         }
         .tire-radius__choice input:checked + label {
-          background: rgb(168, 0, 0);
+          background: #b41818;
         }
       }
       .calc-info {
@@ -199,32 +198,29 @@ input:checked {
   letter-spacing: 0.5px;
   position: relative;
   color: #fff;
-  font-size: 10px;
-  line-height: 12px;
-  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
   border-radius: 2px;
   margin-top: 10px;
 }
 .sticker_aktsiya {
-  padding: 5px;
   height: 20px;
   margin-right: 10px;
-  background-color: #e5b329;
-  color: rgb(31, 31, 31);
+  background-color: #b41818;
+  color: rgb(255, 255, 255);
   width: auto;
-  font-size: 10px;
   position: relative;
   box-sizing: border-box;
+  padding: 5px;
 }
 .sticker_sale_text {
-  padding: 5px;
   height: 20px;
-  background-color: #e52929;
-  color: #fff;
+  background-color: #e5b329;
+  color: rgb(0, 0, 0);
   width: auto;
-  font-size: 10px;
   position: relative;
   box-sizing: border-box;
+  padding: 5px;
 }
 .buy-wrap {
   display: flex;
@@ -234,6 +230,7 @@ input:checked {
   margin-bottom: 10px;
 }
 .buy-counter {
+  width: 30%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -271,7 +268,9 @@ input:checked {
   text-align: center;
   text-decoration: none;
   padding: 10px 20px 10px;
-  font-size: 14px;
+  font-size: 13px;
+  height: 18px;
+  width: 70%;
 }
 .minus {
   height: 34px;
@@ -304,4 +303,55 @@ input:checked {
 }
 .total_summ_none {
   display: none;
+}
+@media (max-width: 1280px) {
+  .row {
+    max-width: 1024px;
+    width: 100%;
+  }
+  .buy-btn {
+    color: #fff;
+    background: #1284b9;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 10px 10px;
+    font-size: 13px;
+    height: 18px;
+    width: 70%;
+}
+}
+@media (max-width: 900px) {
+  .tab-content .wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .tab-content .wrap .auto-type {
+    width: 100%;
+  }
+  .tab-content .wrap .calc-info {
+    width: 100%;
+  }
+  .tab-label {
+    padding: 20px;
+  }
+  input:checked~.tab-content {
+    padding: 0 20px 0 20px;
+  }
+  .tab-content .wrap .auto-type .auto-type__choice {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tab-content .wrap .auto-type .tire-radius__choice label {
+    font-size: 14px;
+    background: grey;
+    color: #fff;
+    line-height: 14px;
+    padding: 2px;
+    margin-bottom: 4px;
+    display: inline-block;
+  }
 }
