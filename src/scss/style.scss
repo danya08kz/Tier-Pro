@@ -30,14 +30,13 @@ input[type=checkbox] {
   .col {
     flex:1;
     &:last-child {
-      margin-left: 1em;
+      margin: 0;
     }
   }
 }
 .tabs {
-  border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 4px 0px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 4px 0px rgba(196, 196, 196, 0.5);
 }
 .tab {
   width: 100%;
@@ -53,13 +52,13 @@ input[type=checkbox] {
     font-weight: bold;
     cursor: pointer;
     background: white;
-    &::after {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 20px;
-      background-image: url('../images/arrow.svg');
-      transition: all .35s;
+    .check-icon {
+      border: solid 1px #b5b5b500; 
+      background: url('../images/arrow.svg') no-repeat center/120%;
+      opacity: 1;
+      width: 19px;
+      transform: rotate(270deg);
+      transition: 0.3s all;
     }
   }
   &-content {
@@ -85,6 +84,40 @@ input[type=checkbox] {
         }
         .auto-type__choice {
           margin-bottom: 20px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+        }
+        .custom-radio {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          margin-right: 10px;
+        }
+        .custom-radio input[type="radio"] {
+           display: none; 
+        }
+        .custom-radio span.radio {
+           background: #b5b5b5; 
+           border: solid 1px #b5b5b5; 
+           border-radius: 50%; 
+           cursor: pointer; 
+           display: block; 
+           height: 12px;
+           width: 12px;
+           left: 0; 
+           margin: 0 8px 0 0; 
+           left: 0;  
+        }
+        .custom-radio input[type='radio']:checked + span.radio {
+           border: solid 1px #b5b5b500; 
+           background: url('../images/check.svg') no-repeat center/120%;
+           opacity: 1; 
+        }
+        .custom-radio input[type='radio']:disabled + span.radio {
+           transform: scale(1); 
+           -webkit-transform: scale(1); 
+           opacity: 0.5; 
         }
         .tire-radius__text {
           margin-bottom: 10px;
@@ -128,6 +161,9 @@ input[type=checkbox] {
       }
       .calc-info {
         width: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   }
@@ -142,7 +178,7 @@ input[type=checkbox] {
 }
 input:checked {
   + .tab-label {
-    &::after {
+    span {
       transform: rotate(90deg);
     }
   }
@@ -150,6 +186,9 @@ input:checked {
     max-height: 100vh;
     padding: 0 20px 0 100px;
   }
+}
+.old-cost {
+  text-decoration: line-through;
 }
 .stickers {
   display: flex;
@@ -202,6 +241,7 @@ input:checked {
   border: 1px solid #f3f3f5;
   background: #f3f3f5;
   font-size: 0px;
+  margin-right: 10px;
   vertical-align: top;
   border-radius: 2px;
   -webkit-touch-callout: none;
@@ -258,4 +298,10 @@ input:checked {
   cursor: pointer;
   vertical-align: top;
   color: black;
+}
+.total_summ {
+  display: block;
+}
+.total_summ_none {
+  display: none;
 }

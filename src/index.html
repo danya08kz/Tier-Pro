@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.min.css" />
-    <title>Accordian</title>
+    <title>Accordeon</title>
   </head>
   <body>
 <div class="row">
@@ -16,79 +16,87 @@
     <div class="tabs">
       <div class="tab">
         <input type="checkbox" id="chck1">
-        <label class="tab-label" for="chck1">Добавить шиномонтаж?</label>
+        <label class="tab-label" for="chck1">Добавить шиномонтаж?
+          <span class="check-icon"></span>
+        </label>
         <div class="tab-content">
           <div class="wrap">
             <div class="auto-type">
               <div class="auto-type__text">Тип автомобиля</div>
               <div class="auto-type__choice">
-                <input type="radio" name="car" id="light" value="1" checked>
-                <label for="light">Легковой</label>
-                <input type="radio" name="car" id="suv" value="2">
-                <label for="suv">Внедорожник/Minivan/SUV</label>
-                <input type="radio" name="car" id="comers" value="3">
-                <label for="comers">Коммерческий</label>
+                <label for="light" class="custom-radio">
+                  <input type="radio" name="car" id="light" value="1" checked>
+                  <span class="radio"></span>
+                  Легковой
+                </label>
+                <label for="suv" class="custom-radio">
+                  <input type="radio" name="car" id="suv" value="2">
+                  <span class="radio"></span>
+                  Внедорожник/Minivan/SUV
+                </label>
+                <label for="comers" class="custom-radio">
+                  <input type="radio" name="car" id="comers" value="3">
+                  <span class="radio"></span>
+                  Коммерческий
+                </label>
               </div>
               <div class="tire-radius__text">Радиус:</div>
               <div class="tire-radius__choice light" id="light-r">
-                <input type="radio" id="1r12" name="radius" value="750">
+                <input type="radio" id="1r12" name="radius" value="750" data-old-cost="1200" checked>
                 <label for="1r12">R12</label>
-                <input type="radio" id="1r13" name="radius" value="750">
+                <input type="radio" id="1r13" name="radius" value="750" data-old-cost="1200">
                 <label for="1r13">R13</label>
-                <input type="radio" id="1r14" name="radius" value="950">
+                <input type="radio" id="1r14" name="radius" value="950" data-old-cost="1300">
                 <label for="1r14">R14</label>
-                <input type="radio" id="1r15" name="radius" value="1250">
+                <input type="radio" id="1r15" name="radius" value="1250" data-old-cost="1600">
                 <label for="1r15">R15</label>
-                <input type="radio" id="1r16" name="radius" value="1250">
+                <input type="radio" id="1r16" name="radius" value="1250" data-old-cost="1600">
                 <label for="1r16">R16</label>
-                <input type="radio" id="1r17" name="radius" value="1250">
+                <input type="radio" id="1r17" name="radius" value="1250" data-old-cost="1600">
                 <label for="1r17">R17</label>
-                <input type="radio" id="1r18" name="radius" value="1500">
+                <input type="radio" id="1r18" name="radius" value="1500" data-old-cost="2000">
                 <label for="1r18">R18</label>
-                <input type="radio" id="1r19" name="radius" value="1500">
+                <input type="radio" id="1r19" name="radius" value="1500" data-old-cost="2000">
                 <label for="1r19">R19</label>
-                <input type="radio" id="1r20" name="radius"
-                value="1800">
+                <input type="radio" id="1r20" name="radius" value="1800" data-old-cost="2500">
                 <label for="1r20">R20</label>
-                <input type="radio" id="1r21" name="radius"
-                value="2400">
+                <input type="radio" id="1r21" name="radius" value="2400" data-old-cost="2700">
                 <label for="1r21">R21</label>
-                <input type="radio" id="1r22" name="radius"
-                value="2400">
+                <input type="radio" id="1r22" name="radius" value="2400" data-old-cost="2700">
                 <label for="1r22">R22</label>
               </div>
               <div class="tire-radius__choice suv-none" id="suv-r">
-                <input type="radio" id="2r14" name="radius" value="1000">
+                <input type="radio" id="2r14" name="radius" value="1000" data-old-cost="1200">
                 <label for="2r14">R14</label>
-                <input type="radio" id="2r15" name="radius" value="1400">
+                <input type="radio" id="2r15" name="radius" value="1400" data-old-cost="1700">
                 <label for="2r15">R15</label>
-                <input type="radio" id="2r16" name="radius" value="1400">
+                <input type="radio" id="2r16" name="radius" value="1400" data-old-cost="1700">
                 <label for="2r16">R16</label>
-                <input type="radio" id="2r17" name="radius" value="1900">
+                <input type="radio" id="2r17" name="radius" value="1900" data-old-cost="2200">
                 <label for="2r17">R17</label>
-                <input type="radio" id="2r18" name="radius" value="1900">
+                <input type="radio" id="2r18" name="radius" value="1900" data-old-cost="2200">
                 <label for="2r18">R18</label>
-                <input type="radio" id="2r19" name="radius" value="2400">
+                <input type="radio" id="2r19" name="radius" value="2400" data-old-cost="3000">
                 <label for="2r19">R19</label>
-                <input type="radio" id="2r20" name="radius" value="2500">
+                <input type="radio" id="2r20" name="radius" value="2500" data-old-cost="3000">
                 <label for="2r20">R20</label>
-                <input type="radio" id="2r21" name="radius" value="2850">
+                <input type="radio" id="2r21" name="radius" value="2850" data-old-cost="3200">
                 <label for="2r21">R21</label>
-                <input type="radio" id="2r22" name="radius" value="2850">
+                <input type="radio" id="2r22" name="radius" value="2850" data-old-cost="3200">
                 <label for="2r22">R22</label>
               </div>
               <div class="tire-radius__choice comers-none" id="comers-r">
-                <input type="radio" id="3r12c" name="radius" value="1000">
+                <input type="radio" id="3r12c" name="radius" value="1000" data-old-cost="1200">
                 <label for="3r12c">R12C</label>
-                <input type="radio" id="3r13c" name="radius" value="1000">
+                <input type="radio" id="3r13c" name="radius" value="1000" data-old-cost="1200">
                 <label for="3r13c">R13C</label>
-                <input type="radio" id="3r14c" name="radius" value="1450">
+                <input type="radio" id="3r14c" name="radius" value="1450" data-old-cost="1800">
                 <label for="3r14c">R14C</label>
-                <input type="radio" id="3r15c" name="radius" value="1450">
+                <input type="radio" id="3r15c" name="radius" value="1450" data-old-cost="2000">
                 <label for="3r15c">R15C</label>
-                <input type="radio" id="3r16c" name="radius" value="1750">
+                <input type="radio" id="3r16c" name="radius" value="1750" data-old-cost="2200">
                 <label for="3r16c">R16C</label>
-                <input type="radio" id="3r17c" name="radius" value="1750">
+                <input type="radio" id="3r17c" name="radius" value="1750" data-old-cost="2200">
                 <label for="3r17c">R17C</label>
               </div>
             </div>
@@ -97,10 +105,10 @@
               <div class="old-cost"><span id="old-cost">1 000</span> тг</div>
               <div class="stickers">
                 <div>
-                  <div class="sticker_aktsiya">-10%</div>
+                  <div class="sticker_aktsiya">-<span id="sale-percent">10</span> %</div>
                 </div>
                 <div>
-                  <div class="sticker_sale_text">Экономия 16 050 тг</div>
+                  <div class="sticker_sale_text">Экономия <span id="econom">16 050</span> тг</div>
                 </div>
               </div>
               <div class="buy-wrap">
@@ -111,7 +119,7 @@
                 </div>
                 <a href="#" class="buy-btn">Добавить к заказу</a>
               </div>
-              <div class="total_summ" style="display: block;">
+              <div class="total_summ" id="total_summ">
                 <div>Общая стоимость <b><span id="summ">52 500</span></b><span> тг</span>
               </div>
             </div>
@@ -123,7 +131,6 @@
       </div>
     </div>
   </div>
-</div>
 <script src="js/script.js"></script>
   </body>
 </html>
